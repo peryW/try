@@ -1,0 +1,54 @@
+<div *ngIf="myRecipe && myCategory" class="all" >
+  <div class="alltherow">
+        <img  src="{{myRecipe.ImgRecipe}}" class="imgCake"/>
+      </div>
+      <div>
+      <h1 class="name">{{myRecipe.NameRecipe}}</h1>
+      <h1 class="namec">
+        
+        {{myCategory.NameCategory}}
+        <img  src="../assets/{{myCategory.IconCategory}}" class="imgca"/>
+      </h1> 
+      <h1 class="time" dir="rtl">{{myRecipe.PreparationTime|hour}}</h1>
+       <img  *ngFor="let x of counterAll(5-myRecipe.Difficulty)" src="../assets/star1.png" class="img"/>
+       <img  *ngFor="let x of counter(myRecipe.Difficulty)" src="../assets/star.png" class="img"/>
+
+      </div>
+      <br/>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <label>:אופן ההכנה</label>
+            <div *ngFor="let x of myRecipe.Preparation; let i=index;" dir="rtl" >
+              <!-- {{i+1}} -->
+              <img src="../assets/pre.svg" class="img"/>
+                {{x}}
+             </div> 
+            </div>
+          <div class="col-6">
+        <label>:רכיבים</label>
+        <div *ngFor="let x of myRecipe.ListOfComponents; let i=index;"  dir="rtl">
+          <img src="../assets/12.jpg" class="imga"/>
+         <!-- {{i+1}} -->
+         <img >
+         {{x}}
+        </div> 
+      </div>
+        
+      </div>
+      </div>
+        <div *ngIf="nameForEdit">
+          <input  *ngEdit="u.name==nameForEdit" class="btn btn-info btn-md" type="button" value="לעריכת המתכון" (click)="edit(myRecipe.IdRecipe)">
+        </div>
+        <!-- <button class="navBtn" (click)="prevRec()"><span>&#10094;</span>למתכון הקודם</button>
+
+        <button class="navBtn" (click)="allRecipes()">לכל המתכונים</button>
+
+        <button class="navBtn" (click)="nextRec()">למתכון הבא<span>&#10095;</span></button> -->
+
+</div> 
+
+
+
+
+

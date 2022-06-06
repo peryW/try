@@ -1,0 +1,90 @@
+#a{
+    border: 2px solid red;
+    /* font-size: 20px; */
+    color:rosybrown;
+    
+}
+.imgCake{
+    width: 300px;
+    height: 200px;
+}
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image1 {
+    display: block;
+    width: 420px;
+    height: 290px;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left:15px;
+    right: 0;
+    background-color : rgba(97, 97, 96, 0.301);
+
+    overflow: hidden;
+    width: 420px;
+    height:0;
+    transition: 1s ease;
+  }
+  
+  .container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    direction: rtl;
+  }
+
+.img{
+    width: 20px;
+    height: 20px;
+}
+.container{
+    margin-left: 30px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+    float: left;
+    width: 31%;
+}
+.editRecipe{
+  width: 420px;
+  height: 50px;
+  font-size: larger;
+background-color: #770402;
+}
+.nameRecipe{
+  color: black;
+  width: 420px;
+  height: 50px;
+  font-size:xx-large;
+  background-color: #770402;
+}
+.middle{
+  background-color: black;
+}
+.onlynameRecipe{
+  color: black;
+  width: 420px;
+  height: 100px;
+  font-size:xx-large;
+  text-align: center;
+  padding-top: 5%;
+  background-color: #770402;
+}
+

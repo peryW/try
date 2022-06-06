@@ -1,0 +1,120 @@
+<!-- <form (ngSubmit)="keep()" #myForm="ngForm" dir="rtl" *ngIf="copyRecipe!=null">    
+    <div>
+        <label>שם מתכון:</label>
+         <input type="text" [(ngModel)]="copyRecipe.NameRecipe" name="nameRecipe" required #nameRecipe="ngModel" />
+         <div class=wrong *ngIf="nameRecipe.touched && nameRecipe.hasError('required')"> זהו שדה חובה!</div>
+
+        </div>
+    <div>
+        <label>בחר קטגוריה:</label>
+     <select [(ngModel)]="copyRecipe.IdCategory" name="idCategory" #idCategory="ngModel" required>
+         <option *ngFor="let x of myCategoryArr"[value]="x.IdCategory">{{x.NameCategory}}</option>
+     </select>
+     <div *ngIf="idCategory.touched&&idCategory.hasError('required')">זהו שדה חובה!</div>
+    </div>
+    <div>
+        <label> משך ההכנה</label>
+         <input type="number" [(ngModel)]="copyRecipe.PreparationTime" name="preparationTime"  required #preparationTime="ngModel"  />
+         <div class=wrong *ngIf="preparationTime.touched && preparationTime.hasError('required')"> זהו שדה חובה!</div>
+        </div>
+    <div>
+        <label>רמת קושי</label>
+         <input type="number" [(ngModel)]="copyRecipe.Difficulty" name="difficulty"  #difficulty="ngModel" required />
+         <div class=pass *ngIf="difficulty.touched &&difficulty.hasError('required')">זהו שדה חובה!</div>
+        
+    </div>
+    <label>רכיבים:</label>
+    <div  *ngFor="let x of copyRecipe.ListOfComponents; let i=index; trackBy:trackByIdx" >
+        {{i}}
+        <input  type="text" (blur)="list()" [(ngModel)]="copyRecipe.ListOfComponents[i]" name="{{i}}" />
+    </div>
+    <label>אופן ההכנה:</label>
+    <div  *ngFor="let x of copyRecipe.Preparation; let i=index;trackBy:trackByIdx" >
+        <input  type="text" (blur)="list2()" [(ngModel)]="copyRecipe.Preparation[i]"  name="{{i}}"/>
+    </div>
+        <div>
+            <label>הוסף תמונה</label>
+            <input type="file"(change)="fileChangeEvent($event)" required />
+            <img [src]="copyRecipe.ImgRecipe"/>
+        </div>
+    <input type="button" value="בטל" name="cencel" (click)="cencel()"/>
+    <input type="submit" value="שמור שינויים" name="keep" [disabled]="!myForm.valid"/>
+
+</form> -->
+
+
+
+
+<h1>!!באתם לשדרג?! בהצלחה</h1>
+   
+<div class="row">
+   <div class="col-75">
+     <div class="container">
+
+        <form (ngSubmit)="keep()" #myForm="ngForm" dir="rtl" *ngIf="copyRecipe!=null">
+           <div class="row">
+               <div class="col-50">
+                <label class="fa fa-shopping-basket a">  שם מתכון:  </label>                <input type="text" [(ngModel)]="copyRecipe.NameRecipe" name="nameRecipe" required #nameRecipe="ngModel" />
+                <div class=wrong *ngIf="nameRecipe.touched && nameRecipe.hasError('required')"> זהו שדה חובה!</div>
+         </div>
+               </div>
+               <div class="row">
+                 <div class="col-50">
+                  <label  class="fa fa-hourglass-half a" > משך ההכנה  </label>
+                    <input type="number" [(ngModel)]="copyRecipe.PreparationTime" name="preparationTime"  required #preparationTime="ngModel"  />
+                    <div class=wrong *ngIf="preparationTime.touched && preparationTime.hasError('required')"> זהו שדה חובה!</div>
+                   </div>
+               </div>
+               <div class="row">
+                 <div class="col-50">
+                    <label class="fa fa-list-ul a">  בחר קטגוריה:  </label>
+                    <select [(ngModel)]="copyRecipe.IdCategory" name="idCategory" #idCategory="ngModel" required>
+                        <option *ngFor="let x of myCategoryArr"[value]="x.IdCategory">{{x.NameCategory}}</option>
+                    </select>
+                    <div *ngIf="idCategory.touched&&idCategory.hasError('required')">זהו שדה חובה!</div>
+                  </div>
+               </div>
+               <div class="row">
+               <div class="col-50">
+                <label class="fa fa-star-half-o a">  רמת קושי  </label>
+                <input type="number" [(ngModel)]="copyRecipe.Difficulty" name="difficulty"  #difficulty="ngModel" required />
+                <div class=pass *ngIf="difficulty.touched &&difficulty.hasError('required')">זהו שדה חובה!</div>
+               </div>
+   </div>
+   <div class="row">
+                 <div class="col-50">
+                    <label class="fa fa-camera-retro a">  הוסף תמונה  </label>
+           <input type="file"(change)="fileChangeEvent($event)"  />
+           <img *ngIf="copyRecipe.ImgRecipe" [src]="copyRecipe.ImgRecipe" class="img"/>
+                  </div>
+   </div> 
+       <div class="row">
+           <div class="col-50"> 
+            <label class="fa fa-apple a">  רכיבים:  </label>
+                <div  *ngFor="let x of arr; let i=index; trackBy:trackByIdx" >
+                    <input  type="text" (blur)="list()" [(ngModel)]="arr[i]" name="{{i}}" />
+                </div>
+            </div>
+          </div>
+          <div class="row">
+               
+            <div class="col-50">
+                <label class="fa fa-cutlery a">  אופן ההכנה:  </label>
+                <div  *ngFor="let x of arr2; let i=index;trackBy:trackByIdx" >
+                    <input  type="text" (blur)="list2()" [(ngModel)]="arr2[i]"  name="{{i}}"/>
+                </div>       
+           </div>
+             </div>
+             <div class="row">
+             <div class="col-50">
+                <input type="button" value="בטל" name="cencel" (click)="cencel()"/>
+           
+             
+                <input type="submit" value="שמור שינויים" name="keep" [disabled]="!myForm.valid"/>
+            </div>
+        </div>
+    
+       </form>
+     </div>
+   </div>
+</div>

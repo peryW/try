@@ -1,0 +1,27 @@
+<!-- <div class="all"> -->
+    <div class="search-container">
+        <input type="text" value="שם המתכון" placeholder="סינון לפי שם"  [(ngModel)]="name"  (keyup)="filterRecipe()" />
+         <i class="fa fa-search"></i>
+      </div>
+      <div class="search-container">
+        <input type="number" value="זמן הכנה" placeholder="סינון לפי זמן הכנה" [(ngModel)]="preption"(mouseup)="filterRecipe()" />
+         <i class="fa fa-search"></i>
+      </div>
+      <div class="search-container">
+        <select [(ngModel)]="IdCategory"(mouseup)="filterRecipe()" placeholder="סינון לפי קטגוריה">
+            <option *ngFor="let x of myCategoryArr"[value]="x.IdCategory"  >{{x.NameCategory}}</option>
+        </select>
+        <i class="fa fa-search"></i>
+     </div>
+
+<div class="search-container">
+<input type="button" value=" נקה סינון  " placeholder="  נקה סינון  "(click)="clear()">
+<i class="fa fa-trash-o"></i>
+     </div>
+<div *ngIf="this.u!=null"class="search-container">
+    <div *ngEdit="u.name!='guest'">
+<input type="button"  value="  להוספת מתכון  "(click)="add()">
+<i class="fa fa-plus-circle"></i>
+</div>
+</div>
+<div  *ngFor="let x of copy" let index=index; ><app-recipe [myRecipe]="x"></app-recipe></div>

@@ -1,0 +1,90 @@
+
+<body>
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post" (ngSubmit)="addUser(); saveLocal();"
+                            #myForm="ngForm">
+                            <h3 class="text-center text-info">להרשמה</h3>
+                            <div class="form-group">
+                                <i class="fa fa-pencil a"></i>
+                                <label for="username" class="text-info">Usercode:</label><br>
+                                <input type="text" [(ngModel)]="myUser.IdUser" name="id" required #id="ngModel"
+                                    minlength="1" maxlength="3" id="username" class="form-control">
+                                <div class=wrong *ngIf="id.touched && id.hasError('required')"> זהו שדה חובה!</div>
+                                <div class=wrong *ngIf="id.minlength<1 && id.maxlength>3"> לא חוקי קוד בין 1-3!</div>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-user a"></i>
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="username" [(ngModel)]="myUser.NameUser" required
+                                    #name="ngModel" id="username" class="form-control">
+                                <div class=use *ngIf="name.touched && name.hasError('required')"> שדה זה זהו שדה חובה!
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-address-card a"></i>
+                                <label for="username" class="text-info">Useradress:</label><br>
+                                <input type="text" [(ngModel)]="myUser.AdressUser" name="adress" required
+                                    #adress="ngModel" id="username" class="form-control">
+                                <div class=use *ngIf="adress.touched &&adress.hasError('required')"> שדה זה זהו שדה חובה!
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope a"></i>
+                                <label for="username" class="text-info">Usermail:</label><br>
+                                <input type="text" [(ngModel)]="myUser.MailUser" name="mail" #mail="ngModel" required
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="username" class="form-control">
+                                <div class=pass *ngIf="mail.touched &&mail.hasError('required')">נא הזן את כתובת דואר
+                                    אלקטרוני!</div>
+                                <div class=pass *ngIf="mail.hasError('pattern')">כתובת מייל שגויה!</div>
+                            </div>
+                            <div class="form-group ">
+                                <div class="f">
+                                    <i class="fa fa-unlock-alt a"></i>
+                                    <label for="password" class="text-info"> Password:</label><br>
+
+                                    <input type="password" name="password" [(ngModel)]="myUser.PassWordUser" required
+                                        #ll #passWord="ngModel" pattern="[A-Za-z0-9]{6,10}" id="password"
+                                        class="form-control">
+                                    <input type="button" (click)="a(ll)" [ngClass]="eyeBtnClass(ll)">
+                                </div>
+                                <div class=pass *ngIf="passWord.touched &&passWord.hasError('required')">שכחת סיסמה?
+                                </div>
+                                <div class=pass *ngIf="passWord.hasError('pattern')">הסיסמה צריכה להכיל בין 6-10 ספרות
+                                    ואותיות</div>
+                                    <div *ngIf="!valid()">הסיסמאות לא תואמות</div>
+                            </div>
+                            <div class="form-group ">
+                                <div class="f">
+                                    <i class="fa fa-unlock-alt a"></i>
+                                    <label for="password" class="text-info"> Password validation:</label><br>
+
+                                    <input type="password" name="passwordd" [(ngModel)]="two" required
+                                        #l #Two="ngModel" pattern="[A-Za-z0-9]{6,10}" id="passwordd"
+                                        class="form-control">
+                                    <input type="button" (click)="b(l)" [ngClass]="eyeBtnClass2(l)">
+                                </div>
+                                <div class=pass *ngIf="Two.touched &&Two.hasError('required')">שכחת סיסמה?
+                                </div>
+                                <div class=pass *ngIf="Two.hasError('pattern')">הסיסמה צריכה להכיל בין 6-10 ספרות
+                                    ואותיות</div>
+                                    <div *ngIf="!valid()">הסיסמאות לא תואמות</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input
+                                            id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit"
+                                    [disabled]="!myForm.valid || !valid()">
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

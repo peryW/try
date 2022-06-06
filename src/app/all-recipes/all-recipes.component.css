@@ -1,0 +1,70 @@
+
+     .search-container {
+        float: right;
+      }
+    
+      input[type=text] {
+        margin-left: 50px;
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+       height: 28.5px;
+       background: #ddd;
+      }
+      input[type=button]   {
+        width: 130px;
+        margin-left: 50px;
+        padding: 6px;
+        /* padding-left: 100px; */
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+       height: 28.5px;
+       background: #ddd;
+       padding-bottom: 10%;
+      }
+    
+      select {
+        width: 200px;
+        margin-left: 50px;
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+       height: 28.5px;
+       background: #ddd;
+      }
+      input[type=number] {
+        margin-left: 50px;
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+       height: 28.5px;
+       background: #ddd;
+      }
+      
+      .search-container i {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      
+      .allRecip{
+          float:flex;
+          width:31%;
+      }
+      input:-internal-autofill-selected {
+        appearance: menulist-button;
+        background-color: #ddd !important;
+        background-image: none !important;
+        color: -internal-light-dark(black, white) !important;
+    }
+    

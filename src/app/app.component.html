@@ -1,0 +1,50 @@
+<!-- <div class="navbar">
+    <a (click)="check($event)"href="home"><i class="fa fa-fw fa-home"></i> login</a> 
+    <a href="register"><i class="fa fa-fw fa-search"></i> register</a> 
+    <a href="allRecipes"><i class="fa fa-fw fa-envelope"></i> our recipe</a> 
+    <a href="logOut"><i class="fa fa-fw fa-user"></i> logOut</a>
+  </div> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+   
+    <ul class="nav navbar-header">
+      <li><a routerLink="logOut" ><span class="glyphicon glyphicon-log-out"></span> יציאה</a></li>
+
+      <li><a routerLink="allRecipes"><span class="glyphicon glyphicon-glass" > </span>המתכונים שלנו</a></li>
+      <li><a routerLink="register"><span class="glyphicon glyphicon-user"></span> הרשמה</a></li>
+      <li><a routerLink="login" ><span class="glyphicon glyphicon-log-in"></span> התחברות</a></li>
+
+     
+    </ul>
+    <div class="nav navbar-header" >
+      <!-- <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+        -->
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;">מתכונים לכל עת</p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a>
+
+      <a class = "navbar-brand" href=""><i ><p  style="color: lavenderblush; font-size: 25px;"></p></i></a> 
+      <a class = "navbar-brand d" href=""><i ><p  style="color: lavenderblush; font-size: 25px;">
+        {{name()}} <i class="fa fa-user-circle-o" ></i> </p></i></a>
+       
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>

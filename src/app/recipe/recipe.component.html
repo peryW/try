@@ -1,0 +1,32 @@
+<div class="container">
+    <img  src="{{myRecipe.ImgRecipe}}" alt="Avatar" class="image1" (click)="show(myRecipe.ImgRecipe)"/>
+    <div class="overlay" (click)="show(myRecipe.ImgRecipe)">
+      <div class="text">
+          <div>זמן הכנה:</div>
+        <label> {{myRecipe.PreparationTime|hour}} </label>
+        <div>דרגת קושי:</div>
+        <label>
+        ‏<img  *ngFor="let x of counter(myRecipe.Difficulty)" src="../assets/star.png" class="img"/>
+        <img  *ngFor="let x of counterAll(5-myRecipe.Difficulty)" src="../assets/star1.png" class="img"/> 
+        </label>
+         </div>
+    </div>
+    <div *ngIf="nameForEdit">
+      <div  *ngEdit="u.name==nameForEdit">
+    <div class="nameRecipe">{{myRecipe.NameRecipe}}</div>
+    <div class="editRecipe">
+      <input  type="button" value="לעריכת המתכון" (click)="edit(myRecipe.IdRecipe)">
+    </div>
+  </div>
+  <div *ngEdit="u.name!=nameForEdit">
+    <div class="onlynameRecipe">{{myRecipe.NameRecipe}}</div>
+
+  </div>
+  </div>
+ 
+ </div>
+
+ <!-- <div [class.middle]="nameForEdit&&!u.name==nameForEdit"[class.nameRecipe]="nameForEdit&&u.name==nameForEdit">{{myRecipe.NameRecipe}}</div>
+    <div *ngIf="nameForEdit" [class.editRecipe]="nameForEdit&&u.name==nameForEdit">
+      <input  *ngEdit="u.name==nameForEdit" type="button" value="לעריכת המתכון" (click)="edit(myRecipe.IdRecipe)">
+    </div> -->
